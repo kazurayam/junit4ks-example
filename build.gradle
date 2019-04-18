@@ -34,10 +34,10 @@ dependencies {
 import java.nio.file.Path
 
 ext {
-    dirDrivers = projectDir.toPath().resolve('Drivers').toFile()
+    outFile = projectDir.toPath().resolve('Drivers').resolve('junit4ks-all.jar')
 }
 
 task downloadFile(type: Download) {
     src 'https://github.com/kazurayam/junit4ks/releases/download/1.6/junit4ks-all.jar'
-    dest dirDrivers
+    dest outFile.toFile()
 }
